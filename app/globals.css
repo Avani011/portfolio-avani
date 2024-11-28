@@ -2,20 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.hide-scrollbar::-webkit-scrollbar {
+  display: block;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+/*tailwind*/
+
+.main{
+  @apply flex flex-col items-center min-h-screen bg-black
+}
+
+.home{
+  @apply w-screen h-screen
+}
+
+.dropdown{
+  @apply w-screen h-screen z-50 fixed flex flex-col justify-normal md:gap-16 sm:max-md:gap-8 bg-secondary bg-opacity-90;
+}
+
+.gren-btn{
+  @apply flex flex-row items-center justify-center md:gap-2 sm:max-md:gap-1 md:text-lg sm:text-xxs md:w-28 sm:max-md:w-14 md:h-10 sm:max-md:h-5 border-2 border-green text-green rounded-full; 
+}
+
+.black-btn{
+  @apply flex flex-row items-center justify-center lg:gap-4 sm:gap-1 md:max-lg:gap-2 border-2 border-secondary rounded-full font-semibold text-secondary lg:text-xl sm:text-xxs md:text-sm md:max-lg:w-32 md:max-lg:h-10 sm:w-20 sm:h-6 lg:w-48 lg:h-16; 
+}
+
+.white-btn{
+  @apply flex flex-row items-center lg:w-52 sm:w-32 md:w-36 lg:font-semibold md:font-medium lg:text-2xl sm:text-sm md:text-lg justify-center lg:gap-6 md:gap-4 sm:gap-3 lg:h-20 sm:h-10 md:h-12 lg:border-4 sm:border-2 border-primary text-primary rounded-full; 
+}
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-start {
+  @apply flex justify-start items-start;
+}
+
+.flex-end {
+  @apply flex justify-end items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
 }
