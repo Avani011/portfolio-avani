@@ -1,36 +1,43 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+import { useEffect } from "react";
 import Card from "@/components/Card";
 import cardData from "@/data/cardData";
 import Nav from "@/components/Nav";
 import Skills from "@/components/Skills";
+import LocomotiveScroll from 'locomotive-scroll';
+// import type LocomotiveScrollType from "locomotive-scroll";
 import { CustomLocomotiveScrollOptions } from "@/types";
 
 export default function Home() {
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && scrollRef.current) {
-      const options: CustomLocomotiveScrollOptions = {
-        el: scrollRef.current as HTMLElement,
-        smooth: true,
-        smartphone: { smooth: true },
-        tablet: { smooth: true },
-      };
+    // Explicitly type the variable
+    let locomotiveScrollInstance: LocomotiveScroll | undefined;
 
-      const locomotiveScrollInstance = new LocomotiveScroll(options);
+    (async () => {
+      const scrollContainer = document.querySelector("[data-scroll-container]");
+      if (scrollContainer) {
+        const options: CustomLocomotiveScrollOptions = {
+          el: scrollContainer as HTMLElement, // Type assertion
+          smooth: true,
+        };
 
-      return () => {
+        locomotiveScrollInstance = new LocomotiveScroll(options);
+      }
+    })();
+
+    // Cleanup function to destroy the instance when the component unmounts
+    return () => {
+      if (locomotiveScrollInstance) {
         locomotiveScrollInstance.destroy();
-      };
-    }
+      }
+    };
   }, []);
 
   return (
-    <div ref={scrollRef} className="main">
+    <div data-scroll-container className="main">
       <Nav />
 
       <section id="main" className="home flex flex-col items-center sm:max-lg:h-fit w-full xl:gap-8 md:gap-16 sm:gap-10">
