@@ -1,27 +1,36 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 import Card from "@/components/Card";
 import cardData from "@/data/cardData";
 import Nav from "@/components/Nav";
 import Skills from "@/components/Skills";
+import { CustomLocomotiveScrollOptions } from "@/types";
 
 export default function Home() {
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    (
-      async () => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
-        const locomotiveScroll = new LocomotiveScroll();
-      }
-    )()
-  })
+    if (typeof window !== "undefined" && scrollRef.current) {
+      const options: CustomLocomotiveScrollOptions = {
+        el: scrollRef.current as HTMLElement,
+        smooth: true,
+        smartphone: { smooth: true },
+        tablet: { smooth: true },
+      };
+
+      const locomotiveScrollInstance = new LocomotiveScroll(options);
+
+      return () => {
+        locomotiveScrollInstance.destroy();
+      };
+    }
+  }, []);
 
   return (
-    <div
-      className="main"
-    >
+    <div ref={scrollRef} className="main">
       <Nav />
 
       <section id="main" className="home flex flex-col items-center sm:max-lg:h-fit w-full xl:gap-8 md:gap-16 sm:gap-10">
@@ -55,7 +64,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col xl:w-30rem md:gap-12 md:w-7/12 sm:w-85% sm:gap-8">
-            <p className="float-none text-wrap xl:text-2xl lg:max-xl:text-xl md:text-base sm:text-sm relative">I'm a passionate front-end and UI/UX 
+            <p className="float-none text-wrap xl:text-2xl lg:max-xl:text-xl md:text-base sm:text-sm relative">I&apos;m a passionate front-end and UI/UX 
               developer who crafts unique designs and 
               codes them into innovative solutions. With 
               a growth mindset and focus on clean, 
@@ -110,7 +119,7 @@ export default function Home() {
         <div className="flex flex-col justify-between lg:gap-28 md:max-lg:gap-20 sm:gap-14 items-center mt-20">
 
           <div className="flex flex-col text-center gap-11">
-            <h1 className="font-semibold xl:text-7xl lg:tsxt-6xl md:text-4xl sm:text-3xl text-primary">Let's Have a Chat !</h1>
+            <h1 className="font-semibold xl:text-7xl lg:tsxt-6xl md:text-4xl sm:text-3xl text-primary">Let&apos;s Have a Chat !</h1>
             <a href="mailto:avaniagarwal110@gmail.com" className="text-primary lg:text-2xl md:text-lg sm:text-sm hover:text-green">avaniagarwal110@gmail.com</a>
           </div>
 
