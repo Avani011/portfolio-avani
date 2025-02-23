@@ -5,7 +5,13 @@ const cardData: cardProps[] = [
         source: "/pr1.svg",
         name: "HACK IT SAPIENS WEBSITE",
         size: "small",
-        link: "https://www.hackitsapiens.com/"
+        link: "https://hackitsapiens-2.vercel.app/"
+    },
+    {
+        source: "/pr5.svg",
+        name: "ALUMNI SOCIETY WEBSITE",
+        size: "large",
+        link: "https://pcas.poornima.org/"
     },
     {
         source: "/pr2.svg",

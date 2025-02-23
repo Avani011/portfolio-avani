@@ -21,14 +21,178 @@ html, body {
 .main{
   @apply flex flex-col items-center min-h-screen bg-black
 }
-
 .home{
   @apply w-screen h-screen
 }
 
+
+
+/*NAV SECTION*/
+
+.nav-div{
+  @apply flex flex-row justify-between w-full bg-black
+}
+
+.nav-img1{
+  @apply flex-start ml-5 mt-3 sm:max-md:w-5
+}
+
+.nav-img2{
+  @apply flex-end mr-5 mt-3 sm:max-md:w-7
+}
+
+
+
+
+/*MAIN SECTION*/
+
+#main{
+  @apply flex flex-col items-center sm:max-lg:h-fit w-full xl:gap-8 md:gap-16 sm:gap-10
+}
+
+.main-btn{
+  @apply mt-16 md:mt-10 sm:mt-8 gren-btn
+}
+
+.main-btn-div{
+  @apply w-2 h-2 sm:max-md:w-1 sm:max-md:h-1 bg-green rounded-full
+}
+.main-h2{
+  @apply text-white font-inter lg:text-xl sm:max-lg:mb-16 md:text-lg sm:text-xxs
+}
+
+
+
+
+/*SKILLS SECTION*/
+
+#skills{
+  @apply sm:max-lg:h-fit flex flex-col items-center justify-center lg:gap-16 sm:max-lg:gap-10
+}
+
+.skills-div{
+  @apply w-full flex flex-col items-center justify-center sm:max-lg:mb-20 lg:gap-8 sm:gap-6
+}
+
+.skills-row1{
+  @apply flex flex-row justify-end lg:gap-8 md:gap-4 sm:gap-3 md:w-50% sm:w-2/3
+}
+
+.skills-row2{
+  @apply flex flex-row justify-center lg:gap-8 md:gap-4 sm:gap-3 md:w-56% sm:w-2/3
+}
+
+.skills-css{
+  @apply bg-white flex items-center justify-center xl:w-28 xl:h-28 rounded-lg lg:w-20 lg:h-20 sm:w-10 sm:h-10 md:w-14 md:h-14
+}
+
+.skills-img{
+  @apply lg:w-14 xl:w-20 md:w-9  sm:w-6
+}
+
+.figma{
+  @apply lg:w-9 xl:w-10 md:w-6 sm:w-4
+}
+
+
+
+/*ABOUT SECTION*/
+
+#about{
+  @apply flex flex-col justify-center sm:max-lg:h-fit xl:gap-36 items-center bg-primary lg:gap-28 md:gap-20 sm:gap-10
+}
+
+.about-div{
+  @apply flex flex-row sm:max-md:flex-col justify-center sm:max-lg:mt-20 xl:gap-48 w-4/5 mt-20 items-center lg:gap-36 md:gap-20 sm:gap-9
+}
+
+.about-row1{
+  @apply flex flex-col sm:max-md:justify-center sm:max-md:items-center lg:gap-28 sm:gap-8 md:max-lg:gap-16 lg:h-72 md:max-lg:h-60 sm:h-fit
+}
+
+.about-h2{
+  @apply xl:text-5xl font-bold flex-start lg:text-4xl md:text-3xl
+}
+
+.about-row2{
+  @apply flex flex-col xl:w-30rem md:gap-12 md:w-7/12 sm:w-85% sm:gap-8
+}
+
+.about-p{
+  @apply float-none text-wrap xl:text-2xl lg:text-xl md:text-base sm:text-sm
+}
+
+.about-row3{
+  @apply w-full flex sm:max-lg:mb-10 sm:max-md:invisible
+}
+
+.about-line{
+  @apply bg-secondary w-96 xl:h-4 lg:max-xl:h-3 md:h-2
+}
+
+
+
+/*MY WORK SECTION*/
+
+#project{
+  @apply w-full h-screen sm:max-lg:h-fit bg-primary flex items-center
+}
+
+
+
+.card-div{
+  @apply flex-shrink-0 flex flex-col justify-start sm:max-md:justify-center sm:max-md:items-center gap-2 md:max-lg:gap-4
+}
+
+.card-h2{
+  @apply text-xl md:max-lg:text-lg font-semibold
+}
+
+
+
+/*CONTACT SECTION*/
+
+#contact{
+  @apply flex flex-col justify-around sm:max-lg:h-fit sm:max-lg:justify-center gap-16
+}
+
+.con-col1{
+  @apply flex flex-col justify-between lg:gap-28 md:max-lg:gap-20 sm:gap-14 items-center mt-20
+}
+
+.con-col2{
+  @apply flex flex-row items-center justify-between w-full sm:max-lg:mb-16
+}
+
+.con-h1{
+  @apply font-semibold xl:text-7xl lg:text-6xl md:text-4xl sm:text-3xl text-primary
+}
+
+.con-a{
+  @apply text-primary lg:text-2xl md:text-lg sm:text-sm hover:text-green
+}
+
+.con-btn-div{
+  @apply flex flex-row sm:max-md:flex-col justify-around lg:gap-24 sm:gap-10 md:gap-16
+}
+
+
+/*DROPDOWN*/
+
 .dropdown{
   @apply w-screen h-screen z-50 fixed flex flex-col justify-normal md:gap-16 sm:max-md:gap-8 bg-secondary bg-opacity-90;
 }
+
+.dropdown-col2{
+  @apply flex flex-col items-center justify-center gap-24 sm:max-md:gap-10
+}
+
+.dropdown-font{
+  @apply text-white text-8xl sm:max-md:text-3xl
+}
+
+
+/*BUTTONS*/
 
 .gren-btn{
   @apply flex flex-row items-center justify-center md:gap-2 sm:max-md:gap-1 md:text-lg sm:text-xxs md:w-28 sm:max-md:w-14 md:h-10 sm:max-md:h-5 border-2 border-green text-green rounded-full; 
@@ -41,6 +205,9 @@ html, body {
 .white-btn{
   @apply flex flex-row items-center lg:w-52 sm:w-32 md:w-36 lg:font-semibold md:font-medium lg:text-2xl sm:text-sm md:text-lg justify-center lg:gap-6 md:gap-4 sm:gap-3 lg:h-20 sm:h-10 md:h-12 lg:border-4 sm:border-2 border-primary text-primary rounded-full; 
 }
+
+
+/*FLEX*/
 
 .flex-center {
   @apply flex justify-center items-center;

@@ -20,21 +20,21 @@ const Dropdown = () => {
                 />
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-24 sm:max-md:gap-10">
+            <div className="dropdown-col2">
                 <Link href="#about"
-                    className="text-white text-8xl sm:max-md:text-3xl"
+                    className="dropdown-font"
                     onClick={() => dispatch(isClose())}
                 >
                     ABOUT
                 </Link>
                 <Link href="#project"
-                    className="text-white text-8xl sm:max-md:text-3xl"
+                    className="dropdown-font"
                     onClick={() => dispatch(isClose())}
                 >
                     MY WORK
                 </Link>
                 <Link href="#contact"
-                    className="text-white text-8xl sm:max-md:text-3xl"
+                    className="dropdown-font"
                     onClick={() => dispatch(isClose())}
                 >
                     CONTACTS

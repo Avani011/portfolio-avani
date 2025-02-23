@@ -27,7 +27,7 @@ const Card = ({ size, source, name, link }: cardProps) => {
   const height = size === "small" ? (isMdScreen ? 147 : 247) : (isMdScreen ? 237 : 337);
 
   return (
-    <div className={`flex-shrink-0 flex flex-col justify-start sm:max-md:justify-center sm:max-md:items-center gap-2 md:max-lg:gap-4`}>
+    <div className="card-div">
       <Link href={link}>
         <Image
           src={source}
@@ -36,7 +36,7 @@ const Card = ({ size, source, name, link }: cardProps) => {
           height={height}
           className="rounded-lg object-cover"
         />
-        <h2 className="text-xl md:max-lg:text-lg font-semibold">{name}</h2>
+        <h2 className="card-h2">{name}</h2>
       </Link>
     </div>
   );

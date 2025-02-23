@@ -17,14 +17,14 @@ const Nav = () => {
       {showDropdown ? (
         <Dropdown />
       ) : (
-        <nav className='flex flex-row justify-between w-full bg-black'>
+        <nav className='nav-div'>
           <Link href="/">
             <Image 
               src="/nav-icon.svg"
               alt='nav-icon'
               width={25}
               height={25}
-              className='flex-start ml-5 mt-3 sm:max-md:w-5'     
+              className='nav-img1'     
               />
             </Link>
 
@@ -34,7 +34,7 @@ const Nav = () => {
               width={30}
               height={20}
               onClick={() => dispatch(isOpen())}
-              className='flex-end mr-5 mt-3 sm:max-md:w-7'  
+              className='nav-img2'  
             />  
         </nav>
       )}
