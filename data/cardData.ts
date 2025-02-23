@@ -9,7 +9,7 @@ const cardData: cardProps[] = [
     },
     {
         source: "/pr5.svg",
-        name: "ALUMNI SOCIETY WEBSITE",
+        name: "POORNIMA COLLEGE ALUMNI SOCIETY WEBSITE",
         size: "large",
         link: "https://pcas.poornima.org/"
     },
