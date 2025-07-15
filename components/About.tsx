@@ -7,7 +7,7 @@ const About = () => {
       <div className="about-div">
         <div className="about-row1">
           <h2 className="about-h2">Hi, I am Avani.</h2>
-          <Link href="https://drive.google.com/file/d/19td_chMBEcOnTlGd6MISYx1u2ympFAUv/view">
+          <Link href="https://drive.google.com/file/d/1HBFEhZCc2WphayHGN-V8yxI_-iNRefpB/view">
             <button className="black-btn">
               <svg
                 width="13"
